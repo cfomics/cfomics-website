@@ -214,7 +214,7 @@ export default function Home() {
               For advisory services, partnerships or initial assessments,
               contact us at:
             </p>
-            <p className="mt-6 text-xl font-semibold">cfomics@gmail.com</p>
+            <p className="mt-6 text-xl font-semibold">office@cfomics.com</p>
           </div>
         </div>
       </section>
