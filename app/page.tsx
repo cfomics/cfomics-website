@@ -102,23 +102,25 @@ const content = {
       eyebrow: "Expertise",
       title: "Expertise Behind CFOmics",
       intro: "CFOmics brings together senior finance, operations, analytics and compliance experience to support companies that need practical, business-oriented advisory without unnecessary complexity.",
-      profileLabel: "Advisor",
       profiles: [
         {
           badge: "01",
-          title: "Strategic Finance & Transformation Advisor",
+          category: "FINANCE",
+          title: "Strategic Finance & Transformation",
           description: "Senior finance executive with 18+ years of experience in financial management, accounting, treasury, controlling and business transformation across multinational organizations. Strong focus on process optimization, financial governance, operational excellence, internal controls and AI-driven finance transformation.",
           areas: ["CFO Advisory", "Financial Strategy", "Budgeting & Forecasting", "Finance Transformation", "Treasury & Cash Flow Management", "Internal Controls", "Process Optimization", "AI for Finance"],
         },
         {
           badge: "02",
-          title: "Finance Operations & Business Analytics Advisor",
+          category: "ANALYTICS",
+          title: "Finance Operations & Analytics",
           description: "Finance professional with experience in financial planning, reporting, performance management and business analytics within global organizations. Background includes financial operations, management reporting, data analysis and process improvement. Strong analytical profile with ACCA studies and experience in business intelligence tools.",
           areas: ["Financial Reporting", "Business Analytics", "FP&A", "Performance Management", "Financial Operations", "Data Visualization", "Business Intelligence"],
         },
         {
           badge: "03",
-          title: "Governance, Risk & Security Advisor",
+          category: "GRC & SECURITY",
+          title: "Governance, Risk & Security",
           description: "Information security and compliance professional with experience supporting organizations in payment security, IT governance, risk management and regulatory compliance. Background includes PCI DSS, SOC reporting, ISO 27001, cloud security, security governance and secure software development advisory.",
           areas: ["PCI DSS & Payment Security", "SOC 1 / SOC 2 Readiness", "ISO 27001", "Security Governance", "IT Risk Management", "Cloud Security", "Secure SDLC", "Third-Party Assessments"],
         },
@@ -258,23 +260,25 @@ const content = {
       eyebrow: "Експертиза",
       title: "Експертизата зад CFOmics",
       intro: "CFOmics обединява опит във финанси, операции, анализи и съответствие, за да подкрепя компании, които имат нужда от практично, бизнес ориентирано консултиране без излишна сложност.",
-      profileLabel: "Консултант",
       profiles: [
         {
           badge: "01",
-          title: "Стратегически финансов и трансформационен консултант",
+          category: "ФИНАНСИ",
+          title: "Стратегически финанси и трансформация",
           description: "Опитен финансов ръководител с 18+ години опит във финансово управление, счетоводство, управление на ликвидност, контролинг и бизнес трансформация в международни организации. Силен фокус върху оптимизация на процеси, финансово управление, оперативно съвършенство, вътрешни контроли и финансова трансформация с AI.",
           areas: ["CFO консултиране", "Финансова стратегия", "Бюджетиране и прогнозиране", "Финансова трансформация", "Ликвидност и парични потоци", "Вътрешни контроли", "Оптимизация на процеси", "AI за финанси"],
         },
         {
           badge: "02",
-          title: "Консултант по финансови операции и бизнес анализи",
+          category: "АНАЛИЗИ",
+          title: "Финансови операции и анализи",
           description: "Финансов професионалист с опит във финансово планиране, отчетност, управление на представянето и бизнес анализи в глобални организации. Опитът включва финансови операции, управленска отчетност, анализ на данни и подобрение на процеси. Силен аналитичен профил с ACCA обучение и опит с инструменти за бизнес анализи.",
           areas: ["Финансова отчетност", "Бизнес анализи", "FP&A", "Управление на представянето", "Финансови операции", "Визуализация на данни", "Инструменти за бизнес анализи"],
         },
         {
           badge: "03",
-          title: "Консултант по управление, риск и сигурност",
+          category: "GRC И СИГУРНОСТ",
+          title: "Управление, риск и сигурност",
           description: "Професионалист по информационна сигурност и съответствие с опит в подкрепа на организации в платежна сигурност, IT управление, управление на риска и регулаторно съответствие. Опитът включва PCI DSS, SOC отчетност, ISO 27001, облачна сигурност, управление на сигурността и консултиране по сигурна разработка на софтуер.",
           areas: ["PCI DSS и платежна сигурност", "SOC 1 / SOC 2 готовност", "ISO 27001", "Управление на сигурността", "IT риск", "Облачна сигурност", "Secure SDLC", "Оценки на трети страни"],
         },
@@ -625,11 +629,11 @@ export default function Home() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0b2f57] text-sm font-bold text-white shadow-md shadow-blue-950/20">
                     {profile.badge}
                   </span>
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-[#1f5f9f]">
-                    {t.expertise.profileLabel}
-                  </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold leading-snug text-slate-950">
+                <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-[#1f5f9f]">
+                  {profile.category}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold leading-snug text-slate-950">
                   {profile.title}
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-slate-600">
