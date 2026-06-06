@@ -17,9 +17,9 @@ const content = {
     },
     hero: {
       eyebrow: "Finance Advisory | CFO Support | Governance",
-      title: "Finance Advisory for Stronger Management and Scalable Governance",
-      body: "CFOmics helps businesses strengthen financial management, optimize processes, and build scalable governance frameworks. Our core focus is finance advisory, CFO support, reporting, budgeting, forecasting, internal controls and finance transformation.",
-      note: "We also support selected clients with IT risk, security and compliance advisory where it complements their broader governance needs.",
+      title: "Finance, Risk & Governance Advisory",
+      body: "CFOmics helps businesses strengthen financial management, improve reporting visibility, optimize processes and build scalable governance frameworks.",
+      note: "Our expertise combines finance advisory, CFO support, AI-enabled finance transformation, internal controls, IT risk, security and compliance advisory.",
       primaryCta: "Book a consultation",
       secondaryCta: "Explore our services",
       dashboardTitle: "Finance Operating View",
@@ -35,75 +35,49 @@ const content = {
     },
     trust: [
       "18+ years finance leadership",
-      "CFO advisory & transformation",
+      "AI-enabled finance workflows",
       "Reporting & internal controls",
-      "Selected compliance expertise",
+      "Governance & compliance expertise",
     ],
     services: {
       eyebrow: "Services",
-      title: "Finance-first advisory with selected risk and compliance support.",
-      intro: "Practical support for companies that need senior finance capability, stronger reporting and scalable governance without unnecessary complexity.",
-      financeLabel: "Core finance practice",
-      complianceLabel: "Additional advisory capability",
-      finance: [
+      title: "Practical advisory across finance, governance and compliance.",
+      intro: "We support companies that need senior finance capability, clearer reporting, stronger controls and practical guidance across governance, risk and compliance.",
+      pillars: [
         {
-          badge: "CFO",
-          title: "Fractional CFO & Finance Advisory",
-          text: "Senior finance guidance for planning, decision support, governance and leadership cadence.",
+          badge: "FIN",
+          title: "Finance Advisory",
+          services: [
+            "Fractional CFO & Strategic Finance",
+            "Budgeting, Forecasting & FP&A",
+            "Management Reporting & Dashboards",
+            "Treasury & Cash Flow Management",
+            "Internal Controls & Governance",
+            "AI-enabled Finance Transformation",
+          ],
         },
         {
-          badge: "FP&A",
-          title: "Budgeting, Forecasting & Financial Planning",
-          text: "Structured budgets, rolling forecasts and planning routines tied to business drivers.",
+          badge: "GRC",
+          title: "Governance, Risk & Compliance",
+          services: [
+            "IT Risk & Compliance Advisory",
+            "PCI DSS Readiness & Payment Security",
+            "SOC 1 / SOC 2 Readiness",
+            "ISO 27001 Advisory",
+            "Security Governance",
+            "Secure SDLC & Cloud Security",
+          ],
         },
-        {
-          badge: "RPT",
-          title: "Financial Reporting & Management Dashboards",
-          text: "Management packs and dashboards that improve visibility, accountability and action.",
-        },
-        {
-          badge: "OPS",
-          title: "Finance Process Optimization",
-          text: "Process mapping, simplification and operating rhythms for faster, cleaner finance work.",
-        },
-        {
-          badge: "CASH",
-          title: "Treasury & Cash Flow Management",
-          text: "Cash visibility, working capital focus and practical treasury routines.",
-        },
-        {
-          badge: "CTRL",
-          title: "Internal Controls & Governance",
-          text: "Control design, responsibilities and governance practices that scale with the company.",
-        },
-        {
-          badge: "ACC",
-          title: "Accounting & Reporting Support",
-          text: "Hands-on support for reporting quality, close discipline and finance operations.",
-        },
-        {
-          badge: "AI",
-          title: "AI-enabled Finance Transformation",
-          text: "Automation ideas and AI-enabled workflows for reporting, analysis and finance productivity.",
-        },
-      ],
-      compliance: [
-        "IT Risk & Compliance Advisory",
-        "PCI DSS Readiness",
-        "SOC 1 / SOC 2 Readiness",
-        "ISO 27001 Advisory",
-        "Security Governance",
-        "Third-Party Risk Reviews",
-        "Secure SDLC & Cloud Security Advisory",
       ],
     },
     experience: {
       eyebrow: "Experience",
       title: "Experience Across Finance, Governance and Compliance",
       intro: "Our team has experience supporting organizations with financial management, budgeting, forecasting, reporting, treasury, internal controls, process optimization, finance transformation and selected compliance frameworks.",
+      focusBadges: ["Finance", "Risk", "Compliance", "Security"],
       cards: [
         {
-          label: "Finance leadership",
+          label: "Finance Leadership",
           title: "CFO advisory and transformation",
           items: ["Budgeting and forecasting", "Treasury and cash flow", "Working capital management"],
         },
@@ -118,8 +92,8 @@ const content = {
           items: ["Internal controls", "Process mapping", "AI-enabled finance workflows"],
         },
         {
-          label: "Selected compliance",
-          title: "Risk frameworks where needed",
+          label: "Compliance & Security",
+          title: "Risk frameworks and security readiness",
           items: ["PCI DSS and payment security", "SOC readiness", "ISO 27001 advisory"],
         },
       ],
@@ -144,7 +118,7 @@ const content = {
         },
         {
           badge: "03",
-          title: "Risk, Security & Compliance Advisor",
+          title: "Governance, Risk & Security Advisor",
           description: "Information security and compliance professional with experience supporting organizations in payment security, IT governance, risk management and regulatory compliance. Background includes PCI DSS, SOC reporting, ISO 27001, cloud security, security governance and secure software development advisory.",
           areas: ["PCI DSS & Payment Security", "SOC 1 / SOC 2 Readiness", "ISO 27001", "Security Governance", "IT Risk Management", "Cloud Security", "Secure SDLC", "Third-Party Assessments"],
         },
@@ -172,16 +146,16 @@ const content = {
       eyebrow: "About CFOmics",
       title: "Boutique finance advisory for better visibility and control.",
       paragraphs: [
-        "CFOmics is a boutique advisory firm focused on finance transformation, CFO support and practical governance. We help companies improve financial visibility, strengthen internal controls, optimize finance operations and make better business decisions through structured reporting and advisory support.",
-        "Our approach combines hands-on finance experience with process improvement, analytics and selected compliance expertise. We work with growing companies, local businesses and international organizations that need senior-level support without building a large internal advisory team.",
+        "CFOmics is a boutique advisory firm focused on finance transformation, CFO support, governance and practical risk management. We help companies improve financial visibility, strengthen internal controls, optimize operations and make better business decisions through structured reporting and advisory support.",
+        "Our approach combines hands-on finance experience with process improvement, analytics, AI-enabled workflows and selected compliance and security expertise. We work with growing companies, local businesses and international organizations that need senior-level support without building a large internal advisory team.",
       ],
     },
     contact: {
       eyebrow: "Contact",
       title: "Book a consultation",
-      text: "Need senior finance support or practical advisory for your next stage of growth? Let's discuss how CFOmics can help you improve visibility, strengthen controls and scale with confidence.",
+      text: "Need senior finance, governance or compliance support for your next stage of growth? Let's discuss how CFOmics can help you improve visibility, strengthen controls and scale with confidence.",
       emailLabel: "Email CFOmics",
-      secondary: "Start with a focused conversation about your finance priorities, reporting needs and governance roadmap.",
+      secondary: "Start with a focused conversation about your finance priorities, reporting needs, risk areas and governance roadmap.",
     },
     footer: {
       copyright: "Copyright 2026 CFOmics. All rights reserved.",
@@ -199,9 +173,9 @@ const content = {
     },
     hero: {
       eyebrow: "Финансово консултиране | CFO подкрепа | Управление и контрол",
-      title: "Финансово консултиране за по-силно управление и устойчив растеж",
-      body: "CFOmics помага на бизнеси да подобрят финансовото управление, да оптимизират процесите и да изградят мащабируеми рамки за управление и контрол. Основният ни фокус е финансово консултиране, CFO подкрепа, отчетност, бюджетиране, прогнозиране, вътрешни контроли и финансова трансформация.",
-      note: "Подкрепяме избрани клиенти и с консултиране в областта на IT риска, сигурността и съответствието, когато това допълва по-широките им нужди от управление и контрол.",
+      title: "Финансово, рисково и управленско консултиране",
+      body: "CFOmics помага на бизнеси да подобрят финансовото управление, видимостта на отчетността, процесите и мащабируемите рамки за управление и контрол.",
+      note: "Експертизата ни комбинира финансово консултиране, CFO подкрепа, финансова трансформация с AI, вътрешни контроли, IT риск, сигурност и консултиране по съответствие.",
       primaryCta: "Запазете консултация",
       secondaryCta: "Вижте услугите",
       dashboardTitle: "Финансов оперативен изглед",
@@ -217,72 +191,46 @@ const content = {
     },
     trust: [
       "18+ години финансово лидерство",
-      "CFO консултиране и трансформация",
+      "Финансови процеси с AI",
       "Отчетност и вътрешни контроли",
-      "Избрана compliance експертиза",
+      "Експертиза по управление и съответствие",
     ],
     services: {
       eyebrow: "Услуги",
-      title: "Финансово консултиране на първо място, с допълваща подкрепа по риск и съответствие.",
-      intro: "Практическа подкрепа за компании, които имат нужда от опитен финансов капацитет, по-силна отчетност и мащабируемо управление без излишна сложност.",
-      financeLabel: "Основна финансова практика",
-      complianceLabel: "Допълваща консултантска практика",
-      finance: [
+      title: "Практично консултиране във финанси, управление и съответствие.",
+      intro: "Подкрепяме компании, които имат нужда от опитен финансов капацитет, по-ясна отчетност, по-силни контроли и практическа насока в управлението, риска и съответствието.",
+      pillars: [
         {
-          badge: "CFO",
-          title: "Fractional CFO и финансово консултиране",
-          text: "Опитна финансова подкрепа за планиране, управленски решения, контрол и лидерски ритъм.",
+          badge: "FIN",
+          title: "Финансово консултиране",
+          services: [
+            "Fractional CFO и стратегически финанси",
+            "Бюджетиране, прогнозиране и FP&A",
+            "Управленска отчетност и табла",
+            "Управление на ликвидност и парични потоци",
+            "Вътрешни контроли и управление",
+            "Финансова трансформация с AI",
+          ],
         },
         {
-          badge: "FP&A",
-          title: "Бюджетиране, прогнозиране и финансово планиране",
-          text: "Структурирани бюджети, rolling прогнози и планиране, свързано с бизнес драйверите.",
+          badge: "GRC",
+          title: "Управление, риск и съответствие",
+          services: [
+            "IT риск и консултиране по съответствие",
+            "PCI DSS готовност и платежна сигурност",
+            "SOC 1 / SOC 2 готовност",
+            "ISO 27001 консултиране",
+            "Управление на сигурността",
+            "Secure SDLC и облачна сигурност",
+          ],
         },
-        {
-          badge: "RPT",
-          title: "Финансова отчетност и управленски табла",
-          text: "Управленски отчети и dashboard-и за по-добра видимост, отчетност и действие.",
-        },
-        {
-          badge: "OPS",
-          title: "Оптимизация на финансови процеси",
-          text: "Картографиране, опростяване и работен ритъм за по-бърза и чиста финансова работа.",
-        },
-        {
-          badge: "CASH",
-          title: "Управление на ликвидност и парични потоци",
-          text: "Видимост върху паричните средства, фокус върху работния капитал и практични процеси за ликвидност.",
-        },
-        {
-          badge: "CTRL",
-          title: "Вътрешни контроли и управление",
-          text: "Дизайн на контроли, отговорности и управленски практики, които растат с компанията.",
-        },
-        {
-          badge: "ACC",
-          title: "Счетоводна и отчетна подкрепа",
-          text: "Практическа подкрепа за качество на отчетността, дисциплина при затваряне и финансови операции.",
-        },
-        {
-          badge: "AI",
-          title: "Финансова трансформация с AI",
-          text: "Идеи за автоматизация и AI процеси за отчетност, анализ и финансова продуктивност.",
-        },
-      ],
-      compliance: [
-        "IT риск и compliance консултиране",
-        "PCI DSS готовност",
-        "SOC 1 / SOC 2 готовност",
-        "ISO 27001 консултиране",
-        "Управление на сигурността",
-        "Оценки на трети страни",
-        "Secure SDLC и консултиране по облачна сигурност",
       ],
     },
     experience: {
       eyebrow: "Опит",
       title: "Опит във финанси, управление, контрол и съответствие",
-      intro: "Екипът ни има опит в подкрепа на организации с финансово управление, бюджетиране, прогнозиране, отчетност, treasury, вътрешни контроли, оптимизация на процеси, финансова трансформация и избрани compliance рамки.",
+      intro: "Екипът ни подкрепя организации с финансово управление, отчетност, вътрешни контроли, оптимизация на процеси, финансова трансформация и практически рамки за управление, риск, сигурност и съответствие.",
+      focusBadges: ["Финанси", "Риск", "Съответствие", "Сигурност"],
       cards: [
         {
           label: "Финансово лидерство",
@@ -300,8 +248,8 @@ const content = {
           items: ["Вътрешни контроли", "Картографиране на процеси", "Финансови процеси с AI"],
         },
         {
-          label: "Избрано съответствие",
-          title: "Рамки за риск при нужда",
+          label: "Съответствие и сигурност",
+          title: "Рамки за риск и готовност за сигурност",
           items: ["PCI DSS и платежна сигурност", "SOC готовност", "ISO 27001 консултиране"],
         },
       ],
@@ -326,7 +274,7 @@ const content = {
         },
         {
           badge: "03",
-          title: "Консултант по риск, сигурност и съответствие",
+          title: "Консултант по управление, риск и сигурност",
           description: "Професионалист по информационна сигурност и съответствие с опит в подкрепа на организации в платежна сигурност, IT управление, управление на риска и регулаторно съответствие. Опитът включва PCI DSS, SOC отчетност, ISO 27001, облачна сигурност, управление на сигурността и консултиране по сигурна разработка на софтуер.",
           areas: ["PCI DSS и платежна сигурност", "SOC 1 / SOC 2 готовност", "ISO 27001", "Управление на сигурността", "IT риск", "Облачна сигурност", "Secure SDLC", "Оценки на трети страни"],
         },
@@ -346,7 +294,7 @@ const content = {
         },
         {
           title: "Изграждаме използваем контрол",
-          text: "Комбинираме финансов опит, подобрение на процеси, анализи, контроли и избрана compliance експертиза.",
+          text: "Комбинираме финансов опит, подобрение на процеси, анализи, контроли и избрана експертиза по съответствие.",
         },
       ],
     },
@@ -354,16 +302,16 @@ const content = {
       eyebrow: "За CFOmics",
       title: "Бутиково финансово консултиране за по-добра видимост и контрол.",
       paragraphs: [
-        "CFOmics е бутикова консултантска фирма с фокус върху финансова трансформация, CFO подкрепа и практично управление. Помагаме на компании да подобрят финансовата видимост, да засилят вътрешните контроли, да оптимизират финансовите операции и да вземат по-добри бизнес решения чрез структурирана отчетност и консултантска подкрепа.",
-        "Подходът ни комбинира практически финансов опит с подобрение на процеси, анализи и избрана експертиза по съответствие. Работим с растящи компании, местни бизнеси и международни организации, които имат нужда от опитна подкрепа без изграждане на голям вътрешен консултантски екип.",
+        "CFOmics е бутикова консултантска фирма с фокус върху финансова трансформация, CFO подкрепа, управление и практичен риск мениджмънт. Помагаме на компании да подобрят финансовата видимост, да засилят вътрешните контроли, да оптимизират операциите и да вземат по-добри бизнес решения чрез структурирана отчетност и консултантска подкрепа.",
+        "Подходът ни комбинира практически финансов опит с подобрение на процеси, анализи, работни потоци с AI и избрана експертиза по съответствие и сигурност. Работим с растящи компании, местни бизнеси и международни организации, които имат нужда от опитна подкрепа без изграждане на голям вътрешен консултантски екип.",
       ],
     },
     contact: {
       eyebrow: "Контакт",
       title: "Запазете консултация",
-      text: "Имате нужда от опитна финансова подкрепа или практично консултиране за следващия етап на растеж? Нека обсъдим как CFOmics може да помогне за по-добра видимост, по-силни контроли и уверено мащабиране.",
+      text: "Имате нужда от опитна финансова, управленска или подкрепа по съответствие за следващия етап на растеж? Нека обсъдим как CFOmics може да помогне за по-добра видимост, по-силни контроли и уверено мащабиране.",
       emailLabel: "Пишете на CFOmics",
-      secondary: "Започнете с фокусиран разговор за финансовите приоритети, отчетността и пътната карта за управление и контрол.",
+      secondary: "Започнете с фокусиран разговор за финансовите приоритети, отчетността, рисковите области и пътната карта за управление.",
     },
     footer: {
       copyright: "2026 CFOmics. Всички права запазени.",
@@ -555,52 +503,45 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 rounded-[2rem] border border-blue-100 bg-white p-4 shadow-xl shadow-blue-950/5 sm:p-6">
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-              <span className="rounded-full bg-[#0b2f57] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white">
-                {t.services.financeLabel}
-              </span>
-              <span className="text-sm font-medium text-slate-500">
-                CFOmics
-              </span>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {t.services.finance.map((service) => (
-                <article
-                  key={service.title}
-                  className="group rounded-3xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/10"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-xs font-black text-[#0b2f57] ring-1 ring-blue-100">
-                    {service.badge}
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {t.services.pillars.map((pillar, index) => (
+              <article
+                key={pillar.title}
+                className={`group rounded-[2rem] border bg-white p-6 shadow-xl shadow-blue-950/5 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-950/10 ${
+                  index === 0 ? "border-blue-100" : "border-slate-200"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-5">
+                  <div>
+                    <span
+                      className={`inline-flex rounded-full px-3 py-1 text-xs font-black tracking-wide ${
+                        index === 0
+                          ? "bg-[#0b2f57] text-white"
+                          : "bg-blue-50 text-[#0b2f57] ring-1 ring-blue-100"
+                      }`}
+                    >
+                      {pillar.badge}
+                    </span>
+                    <h3 className="mt-4 text-2xl font-semibold text-slate-950">
+                      {pillar.title}
+                    </h3>
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold leading-snug text-slate-950">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    {service.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white/75 p-5 shadow-sm">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="rounded-full border border-slate-300 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-600">
-                {t.services.complianceLabel}
-              </span>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {t.services.compliance.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-medium text-slate-700"
-                >
-                  {item}
+                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-50 to-slate-100 ring-1 ring-slate-200" />
                 </div>
-              ))}
-            </div>
+
+                <div className="mt-5 grid gap-3">
+                  {pillar.services.map((service) => (
+                    <div
+                      key={service}
+                      className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                    >
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-blue-500" />
+                      <span>{service}</span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -620,6 +561,16 @@ export default function Home() {
             <p className="mt-5 text-lg leading-8 text-slate-600">
               {t.experience.intro}
             </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.experience.focusBadges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1f5f9f]"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
