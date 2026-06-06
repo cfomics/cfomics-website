@@ -5,7 +5,14 @@ import Link from "next/link";
 import { useState } from "react";
 
 type Language = "en" | "bg";
-type PageKey = "home" | "services" | "finance" | "grc" | "about" | "contact";
+type PageKey =
+  | "home"
+  | "services"
+  | "finance"
+  | "grc"
+  | "about"
+  | "contact"
+  | "insights";
 type SiteContent = (typeof content)[Language];
 type DetailContent = {
   eyebrow: string;
@@ -30,7 +37,8 @@ const content = {
       home: "Home",
       services: "Services",
       finance: "Finance Advisory",
-      grc: "GRC",
+      grc: "Governance, Risk & Compliance",
+      allServices: "All Services",
       about: "About",
       contact: "Contact",
     },
@@ -57,12 +65,15 @@ const content = {
         "Reporting & internal controls",
         "Governance & compliance expertise",
       ],
-      visualTitle: "Advisory Framework",
-      visualIntro: "A practical model for stronger management, control and resilience.",
+      visualTitle: "Leadership Advisory Workshop",
+      visualIntro: "Finance, governance, risk and compliance aligned around practical management decisions.",
       framework: ["Finance", "Governance", "Risk", "Compliance"],
-      servicesTitle: "Two connected advisory pillars",
+      servicesTitle: "Our Services",
       servicesIntro:
-        "Finance remains the primary focus, supported by a clear governance, risk and compliance practice.",
+        "Two complementary advisory practices helping organizations improve performance, governance and decision-making.",
+      expertiseTitle: "Expertise Behind CFOmics",
+      expertiseIntro:
+        "Senior finance, operations, analytics and governance experience for companies that need practical advisory without unnecessary complexity.",
       approachTitle: "Built for practical decisions",
       approach: [
         "Clarify financial visibility and reporting needs.",
@@ -85,7 +96,7 @@ const content = {
           services: [
             "Fractional CFO & Strategic Finance",
             "Budgeting, Forecasting & FP&A",
-            "Management Reporting & Dashboards",
+            "Management Reporting & Decision Packs",
             "Treasury & Cash Flow Management",
             "Internal Controls & Governance",
             "AI-enabled Finance Transformation",
@@ -127,9 +138,9 @@ const content = {
             "Senior financial perspective for leadership cadence, decision support, operating priorities and transformation planning.",
         },
         {
-          title: "Reporting, Planning & Dashboards",
+          title: "Reporting, Planning & Management Insight",
           text:
-            "Budgeting, rolling forecasts, management packs and dashboards that improve visibility and accountability.",
+            "Budgeting, rolling forecasts and management reporting packs that improve visibility and accountability.",
         },
         {
           title: "Controls, Treasury & Transformation",
@@ -205,13 +216,28 @@ const content = {
         "Start with a focused conversation about your finance priorities, reporting needs, risk areas and governance roadmap.",
       email: "office@cfomics.com",
     },
+    insights: {
+      eyebrow: "Insights",
+      title: "Insights library in preparation",
+      intro:
+        "This section is prepared for future articles on PCI DSS, AI in finance, internal controls, governance, SOC readiness and ISO 27001.",
+      topics: [
+        "PCI DSS articles",
+        "AI in Finance",
+        "Internal Controls",
+        "Governance",
+        "SOC Readiness",
+        "ISO 27001",
+      ],
+    },
   },
   bg: {
     nav: {
       home: "Начало",
       services: "Услуги",
       finance: "Финанси",
-      grc: "GRC",
+      grc: "Управление, риск и съответствие",
+      allServices: "Всички услуги",
       about: "За нас",
       contact: "Контакт",
     },
@@ -239,12 +265,15 @@ const content = {
         "Отчетност и вътрешни контроли",
         "Експертиза по управление и съответствие",
       ],
-      visualTitle: "Консултантска рамка",
-      visualIntro: "Практичен модел за по-силно управление, контрол и устойчивост.",
+      visualTitle: "Работна среща с ръководството",
+      visualIntro: "Финанси, управление, риск и съответствие, свързани с практични управленски решения.",
       framework: ["Финанси", "Управление", "Риск", "Съответствие"],
-      servicesTitle: "Две свързани консултантски практики",
+      servicesTitle: "Нашите услуги",
       servicesIntro:
-        "Финансите остават основен фокус, подкрепен от ясна практика по управление, риск и съответствие.",
+        "Две допълващи се консултантски практики, които помагат на организациите да подобрят представянето, управлението и решенията.",
+      expertiseTitle: "Експертизата зад CFOmics",
+      expertiseIntro:
+        "Опит във финанси, операции, анализи и управление за компании, които имат нужда от практично консултиране без излишна сложност.",
       approachTitle: "Създадено за практични решения",
       approach: [
         "Изясняваме финансовата видимост и нуждите от отчетност.",
@@ -267,7 +296,7 @@ const content = {
           services: [
             "Fractional CFO и стратегически финанси",
             "Бюджетиране, прогнозиране и FP&A",
-            "Управленска отчетност и табла",
+            "Управленска отчетност и анализи",
             "Управление на ликвидност и парични потоци",
             "Вътрешни контроли и управление",
             "Финансова трансформация с AI",
@@ -309,9 +338,9 @@ const content = {
             "Опитна финансова перспектива за управленски ритъм, решения, оперативни приоритети и трансформация.",
         },
         {
-          title: "Отчетност, планиране и табла",
+          title: "Отчетност, планиране и управленски анализи",
           text:
-            "Бюджетиране, rolling прогнози, управленски отчети и табла за по-добра видимост и отговорност.",
+            "Бюджетиране, rolling прогнози и управленски отчети за по-добра видимост и отговорност.",
         },
         {
           title: "Контроли, ликвидност и трансформация",
@@ -387,17 +416,28 @@ const content = {
         "Започнете с фокусиран разговор за финансовите приоритети, отчетността, рисковите области и пътната карта за управление.",
       email: "office@cfomics.com",
     },
+    insights: {
+      eyebrow: "Публикации",
+      title: "Библиотека с публикации в подготовка",
+      intro:
+        "Тази секция е подготвена за бъдещи материали за PCI DSS, AI във финансите, вътрешни контроли, управление, SOC готовност и ISO 27001.",
+      topics: [
+        "PCI DSS статии",
+        "AI във финансите",
+        "Вътрешни контроли",
+        "Управление",
+        "SOC готовност",
+        "ISO 27001",
+      ],
+    },
   },
 } as const;
 
-const navItems: Array<{ key: keyof typeof content.en.nav; href: string }> = [
-  { key: "home", href: "/" },
-  { key: "services", href: "/services" },
+const serviceNavItems = [
   { key: "finance", href: "/services/finance-advisory" },
   { key: "grc", href: "/services/governance-risk-compliance" },
-  { key: "about", href: "/about" },
-  { key: "contact", href: "/contact" },
-];
+  { key: "allServices", href: "/services" },
+] as const;
 
 export function SitePage({ page }: { page: PageKey }) {
   const [language, setLanguage] = useState<Language>("en");
@@ -413,6 +453,7 @@ export function SitePage({ page }: { page: PageKey }) {
       {page === "grc" && <DetailPage data={t.grc} cta={t.cta} />}
       {page === "about" && <AboutPage t={t} />}
       {page === "contact" && <ContactPage t={t} />}
+      {page === "insights" && <InsightsPage t={t} />}
 
       <Footer t={t} />
     </main>
@@ -442,16 +483,38 @@ function Header({
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm font-medium text-slate-600 xl:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="transition hover:text-slate-950"
+        <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 xl:flex">
+          <Link href="/" className="transition hover:text-slate-950">
+            {t.nav.home}
+          </Link>
+
+          <div className="group relative">
+            <button
+              type="button"
+              className="flex items-center gap-1.5 py-2 transition hover:text-slate-950"
             >
-              {t.nav[item.key]}
-            </Link>
-          ))}
+              <span>{t.nav.services}</span>
+              <span className="text-[10px]">▼</span>
+            </button>
+            <div className="invisible absolute left-0 top-full min-w-72 translate-y-2 rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-2xl shadow-blue-950/10 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              {serviceNavItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-xl px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-slate-950"
+                >
+                  {t.nav[item.key]}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link href="/about" className="transition hover:text-slate-950">
+            {t.nav.about}
+          </Link>
+          <Link href="/contact" className="transition hover:text-slate-950">
+            {t.nav.contact}
+          </Link>
         </nav>
 
         <div
@@ -498,6 +561,7 @@ function HomePage({ t }: { t: SiteContent }) {
         </div>
         <ServicePillars t={t} compact />
       </SectionShell>
+      <ExpertisePreview t={t} />
       <section className="bg-[#081f38] px-5 py-16 text-white sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
           <h2 className="text-3xl font-semibold">{t.home.approachTitle}</h2>
@@ -518,6 +582,43 @@ function HomePage({ t }: { t: SiteContent }) {
       </section>
       <CTA t={t} />
     </>
+  );
+}
+
+function ExpertisePreview({ t }: { t: SiteContent }) {
+  return (
+    <section className="border-y border-slate-200 bg-white px-5 py-20 sm:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <Eyebrow>{t.about.eyebrow}</Eyebrow>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {t.home.expertiseTitle}
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-slate-600 lg:justify-self-end">
+            {t.home.expertiseIntro}
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {t.about.profiles.map((profile) => (
+            <article
+              key={profile.title}
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#1f5f9f]">
+                {profile.category}
+              </p>
+              <h3 className="mt-3 text-xl font-semibold">{profile.title}</h3>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                {profile.text}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -555,36 +656,44 @@ function Hero({ t }: { t: SiteContent }) {
           </div>
         </div>
 
-        <FrameworkVisual t={t} />
+        <ConsultingVisual t={t} />
       </div>
     </section>
   );
 }
 
-function FrameworkVisual({ t }: { t: SiteContent }) {
+function ConsultingVisual({ t }: { t: SiteContent }) {
   return (
-    <div className="relative rounded-[2rem] border border-white/80 bg-white/85 p-5 shadow-2xl shadow-blue-950/15 backdrop-blur sm:p-6">
-      <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5">
-        <div className="border-b border-slate-200 pb-5">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#1f5f9f]">
-            {t.home.visualTitle}
-          </p>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
-            {t.home.visualIntro}
-          </p>
-        </div>
-        <div className="mt-6 grid grid-cols-2 gap-4">
-          {t.home.framework.map((item, index) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5 shadow-sm"
-            >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0b2f57] text-sm font-black text-white">
-                {String(index + 1).padStart(2, "0")}
+    <div className="relative rounded-[2rem] border border-white/80 bg-white/90 p-4 shadow-2xl shadow-blue-950/15 backdrop-blur sm:p-5">
+      <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[#0b2f57]">
+        <div className="relative min-h-[430px] bg-[linear-gradient(135deg,rgba(8,31,56,0.96),rgba(17,64,111,0.88)),radial-gradient(circle_at_28%_20%,rgba(147,197,253,0.28),transparent_34%)] p-6 text-white sm:p-8">
+          <div className="absolute inset-x-8 top-10 h-px bg-white/15" />
+          <div className="absolute bottom-20 left-1/2 h-28 w-[72%] -translate-x-1/2 rounded-[50%] border border-white/15 bg-white/10 shadow-2xl shadow-slate-950/30" />
+          <div className="absolute bottom-24 left-[19%] h-14 w-14 rounded-full border border-white/30 bg-white/20" />
+          <div className="absolute bottom-36 left-[39%] h-16 w-16 rounded-full border border-white/30 bg-white/25" />
+          <div className="absolute bottom-24 right-[20%] h-14 w-14 rounded-full border border-white/30 bg-white/20" />
+          <div className="absolute bottom-11 left-[30%] h-12 w-24 rotate-[-8deg] rounded-xl border border-white/20 bg-white/90 shadow-lg" />
+          <div className="absolute bottom-12 right-[30%] h-12 w-24 rotate-[7deg] rounded-xl border border-white/20 bg-blue-50 shadow-lg" />
+
+          <div className="relative max-w-sm">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-100">
+              {t.home.visualTitle}
+            </p>
+            <p className="mt-3 text-sm leading-6 text-blue-50/90">
+              {t.home.visualIntro}
+            </p>
+          </div>
+
+          <div className="relative mt-10 grid gap-3 sm:grid-cols-2">
+            {t.home.framework.map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur"
+              >
+                <p className="text-sm font-semibold">{item}</p>
               </div>
-              <p className="text-lg font-semibold text-slate-950">{item}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -777,6 +886,30 @@ function ContactPage({ t }: { t: SiteContent }) {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+function InsightsPage({ t }: { t: SiteContent }) {
+  return (
+    <>
+      <PageHero
+        eyebrow={t.insights.eyebrow}
+        title={t.insights.title}
+        intro={t.insights.intro}
+      />
+      <SectionShell>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {t.insights.topics.map((topic) => (
+            <div
+              key={topic}
+              className="rounded-3xl border border-slate-200 bg-white p-6 text-lg font-semibold shadow-lg shadow-blue-950/5"
+            >
+              {topic}
+            </div>
+          ))}
+        </div>
+      </SectionShell>
     </>
   );
 }
