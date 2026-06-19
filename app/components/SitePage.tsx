@@ -71,9 +71,43 @@ const content = {
       servicesTitle: "Our Services",
       servicesIntro:
         "Two complementary advisory practices helping organizations improve performance, governance and decision-making.",
+      technologyTitle: "Technology Advisory",
+      technologyIntro:
+        "Practical support for technology risk, cybersecurity governance and regulatory readiness where finance, controls and technology intersect.",
+      technologyServices: [
+        "NIS2 Readiness",
+        "DORA Readiness",
+        "PCI DSS Advisory",
+        "SWIFT CSP Assessments",
+        "ISO 27001 Readiness",
+        "ISO 42001 AI Governance",
+        "IT Risk Management",
+        "Security & Compliance Advisory",
+      ],
+      frameworksTitle: "Frameworks & Standards",
+      frameworks: [
+        "NIS2",
+        "DORA",
+        "PCI DSS",
+        "SWIFT CSP",
+        "ISO 27001",
+        "ISO 42001",
+        "Cyber Resilience Act (CRA)",
+        "SOC 2",
+      ],
       expertiseTitle: "Expertise Behind CFOmics",
       expertiseIntro:
         "Senior finance, operations, analytics and governance experience for companies that need practical advisory without unnecessary complexity.",
+      whyTitle: "Why CFOmics",
+      whyText:
+        "CFOmics combines finance and technology expertise with senior-level advisory experience, a practical compliance approach, strong governance and risk focus, and tailored engagements shaped around each client's priorities.",
+      whyPoints: [
+        "Combined Finance and Technology expertise",
+        "Senior-level advisory experience",
+        "Practical compliance approach",
+        "Governance and risk focus",
+        "Tailored engagements",
+      ],
       approachTitle: "Built for practical decisions",
       approach: [
         "Clarify financial visibility and reporting needs.",
@@ -271,9 +305,43 @@ const content = {
       servicesTitle: "Нашите услуги",
       servicesIntro:
         "Две допълващи се консултантски практики, които помагат на организациите да подобрят представянето, управлението и решенията.",
+      technologyTitle: "Технологично консултиране",
+      technologyIntro:
+        "Практична подкрепа за технологичен риск, управление на киберсигурността и регулаторна готовност там, където финансите, контролите и технологиите се пресичат.",
+      technologyServices: [
+        "NIS2 готовност",
+        "DORA готовност",
+        "PCI DSS консултиране",
+        "SWIFT CSP оценки",
+        "ISO 27001 готовност",
+        "ISO 42001 AI управление",
+        "IT риск мениджмънт",
+        "Консултиране по сигурност и съответствие",
+      ],
+      frameworksTitle: "Рамки и стандарти",
+      frameworks: [
+        "NIS2",
+        "DORA",
+        "PCI DSS",
+        "SWIFT CSP",
+        "ISO 27001",
+        "ISO 42001",
+        "Cyber Resilience Act (CRA)",
+        "SOC 2",
+      ],
       expertiseTitle: "Експертизата зад CFOmics",
       expertiseIntro:
         "Опит във финанси, операции, анализи и управление за компании, които имат нужда от практично консултиране без излишна сложност.",
+      whyTitle: "Защо CFOmics",
+      whyText:
+        "CFOmics комбинира финансова и технологична експертиза със senior консултантски опит, практичен compliance подход, силен фокус върху управление и риск, и ангажименти, съобразени с приоритетите на всеки клиент.",
+      whyPoints: [
+        "Комбинирана финансова и технологична експертиза",
+        "Senior консултантски опит",
+        "Практичен compliance подход",
+        "Фокус върху управление и риск",
+        "Съобразени ангажименти",
+      ],
       approachTitle: "Създадено за практични решения",
       approach: [
         "Изясняваме финансовата видимост и нуждите от отчетност.",
@@ -561,7 +629,10 @@ function HomePage({ t }: { t: SiteContent }) {
         </div>
         <ServicePillars t={t} compact />
       </SectionShell>
+      <TechnologyAdvisory t={t} />
+      <FrameworksStandards t={t} />
       <ExpertisePreview t={t} />
+      <WhyCFOmics t={t} />
       <section className="bg-[#081f38] px-5 py-16 text-white sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
           <h2 className="text-3xl font-semibold">{t.home.approachTitle}</h2>
@@ -582,6 +653,57 @@ function HomePage({ t }: { t: SiteContent }) {
       </section>
       <CTA t={t} />
     </>
+  );
+}
+
+function TechnologyAdvisory({ t }: { t: SiteContent }) {
+  return (
+    <section className="border-y border-slate-200 bg-white px-5 py-20 sm:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <Eyebrow>{t.home.technologyTitle}</Eyebrow>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {t.home.technologyTitle}
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-slate-600 lg:justify-self-end">
+            {t.home.technologyIntro}
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {t.home.technologyServices.map((service) => (
+            <div
+              key={service}
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-semibold text-slate-700 shadow-sm"
+            >
+              {service}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FrameworksStandards({ t }: { t: SiteContent }) {
+  return (
+    <section className="px-5 py-16 sm:px-8">
+      <div className="mx-auto max-w-7xl">
+        <Eyebrow>{t.home.frameworksTitle}</Eyebrow>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {t.home.frameworks.map((framework) => (
+            <span
+              key={framework}
+              className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm"
+            >
+              {framework}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -615,6 +737,34 @@ function ExpertisePreview({ t }: { t: SiteContent }) {
                 {profile.text}
               </p>
             </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyCFOmics({ t }: { t: SiteContent }) {
+  return (
+    <section className="px-5 py-20 sm:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div>
+          <Eyebrow>{t.home.whyTitle}</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            {t.home.whyTitle}
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            {t.home.whyText}
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {t.home.whyPoints.map((point) => (
+            <div
+              key={point}
+              className="rounded-3xl border border-slate-200 bg-white p-6 text-sm font-semibold text-slate-700 shadow-lg shadow-blue-950/5"
+            >
+              {point}
+            </div>
           ))}
         </div>
       </div>

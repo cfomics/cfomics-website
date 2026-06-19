@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CFOmics | Finance, Risk & Governance Advisory",
+  title: "CFOmics | Finance, Risk & Technology Advisory",
   description:
-    "Boutique finance, risk and governance advisory with CFO support, reporting, internal controls, IT risk, security and compliance expertise.",
+    "Boutique advisory firm providing CFO services, financial reporting, internal controls, IT risk, cybersecurity, compliance, NIS2, DORA, PCI DSS and SWIFT CSP advisory.",
 };
 
 export default function RootLayout({
