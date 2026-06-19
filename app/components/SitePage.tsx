@@ -9,6 +9,7 @@ type PageKey =
   | "home"
   | "services"
   | "finance"
+  | "technology"
   | "grc"
   | "about"
   | "contact"
@@ -37,6 +38,7 @@ const content = {
       home: "Home",
       services: "Services",
       finance: "Finance Advisory",
+      technology: "Technology Advisory",
       grc: "Governance, Risk & Compliance",
       allServices: "All Services",
       about: "About",
@@ -117,12 +119,12 @@ const content = {
     },
     services: {
       eyebrow: "Services",
-      title: "Practical advisory across finance, governance and compliance.",
+      title: "Services",
       intro:
-        "We support companies that need senior finance capability, clearer reporting, stronger controls and practical guidance across governance, risk and compliance.",
+        "Integrated Finance, Risk & Technology Advisory. CFOmics supports organizations across finance operations, compliance readiness, governance, IT risk and technology advisory.",
       pillars: [
         {
-          href: "/services/finance-advisory",
+          href: "/finance-advisory",
           badge: "FIN",
           title: "Finance Advisory",
           text:
@@ -137,18 +139,21 @@ const content = {
           ],
         },
         {
-          href: "/services/governance-risk-compliance",
-          badge: "GRC",
-          title: "Governance, Risk & Compliance",
+          href: "/technology-advisory",
+          badge: "TECH",
+          title: "Technology Advisory",
           text:
-            "IT risk, security governance, payment security, compliance readiness and secure delivery practices.",
+            "Framework-based assessments, gap analysis and advisory support for regulated and technology-dependent organizations.",
           services: [
-            "IT Risk & Compliance Advisory",
-            "PCI DSS Readiness & Payment Security",
-            "SOC 1 / SOC 2 Readiness",
-            "ISO 27001 Advisory",
-            "Security Governance",
-            "Secure SDLC & Cloud Security",
+            "NIS2 Readiness",
+            "DORA Readiness",
+            "PCI DSS Advisory",
+            "SWIFT CSP Assessments",
+            "ISO 27001 Readiness",
+            "ISO 42001 AI Governance",
+            "Cyber Resilience Act (CRA) Readiness",
+            "IT Risk Management",
+            "Security & Compliance Advisory",
           ],
         },
       ],
@@ -157,13 +162,14 @@ const content = {
       eyebrow: "Finance Advisory",
       title: "Senior finance support for visibility, control and scale.",
       intro:
-        "CFOmics helps leadership teams improve planning, reporting, cash visibility and governance through practical finance advisory.",
+        "CFOmics helps organizations improve financial visibility, reporting discipline and finance operating models.",
       outcomes: [
-        "Sharper budgeting, forecasting and FP&A routines",
-        "Management reporting that supports action",
-        "Treasury and cash flow visibility",
-        "Internal controls that fit the operating model",
-        "AI-enabled workflows for finance productivity",
+        "CFO Services",
+        "Financial Reporting",
+        "Budgeting & Forecasting",
+        "Internal Controls",
+        "Finance Transformation",
+        "Accounting Process Advisory",
       ],
       sections: [
         {
@@ -180,6 +186,40 @@ const content = {
           title: "Controls, Treasury & Transformation",
           text:
             "Cash flow routines, working capital focus, internal controls and AI-enabled process improvements.",
+        },
+      ],
+    },
+    technology: {
+      eyebrow: "Technology Advisory",
+      title: "Technology Advisory",
+      intro:
+        "CFOmics provides framework-based assessments, gap analysis and advisory support for regulated and technology-dependent organizations.",
+      outcomes: [
+        "NIS2 Readiness",
+        "DORA Readiness",
+        "PCI DSS Advisory",
+        "SWIFT CSP Assessments",
+        "ISO 27001 Readiness",
+        "ISO 42001 AI Governance",
+        "Cyber Resilience Act (CRA) Readiness",
+        "IT Risk Management",
+        "Security & Compliance Advisory",
+      ],
+      sections: [
+        {
+          title: "Regulatory Readiness",
+          text:
+            "Assessment and advisory support for NIS2, DORA, Cyber Resilience Act readiness and related governance expectations.",
+        },
+        {
+          title: "Security & Compliance Frameworks",
+          text:
+            "Practical gap analysis and advisory support for PCI DSS, SWIFT CSP, ISO 27001 and ISO 42001 AI governance.",
+        },
+        {
+          title: "IT Risk Management",
+          text:
+            "Structured support for technology risk, security governance, remediation planning and compliance priorities.",
         },
       ],
     },
@@ -247,7 +287,7 @@ const content = {
       eyebrow: "Contact",
       title: "Book a consultation",
       intro:
-        "Start with a focused conversation about your finance priorities, reporting needs, risk areas and governance roadmap.",
+        "Contact CFOmics for advisory, partnership and assessment inquiries across finance, technology, governance, risk and compliance.",
       email: "office@cfomics.com",
     },
     insights: {
@@ -270,6 +310,7 @@ const content = {
       home: "Начало",
       services: "Услуги",
       finance: "Финанси",
+      technology: "Технологично консултиране",
       grc: "Управление, риск и съответствие",
       allServices: "Всички услуги",
       about: "За нас",
@@ -351,12 +392,12 @@ const content = {
     },
     services: {
       eyebrow: "Услуги",
-      title: "Практично консултиране във финанси, управление и съответствие.",
+      title: "Услуги",
       intro:
-        "Подкрепяме компании, които имат нужда от опитен финансов капацитет, по-ясна отчетност, по-силни контроли и практическа насока в управлението, риска и съответствието.",
+        "Интегрирано финансово, рисково и технологично консултиране. CFOmics подкрепя организации във финансови операции, готовност за съответствие, управление, IT риск и технологично консултиране.",
       pillars: [
         {
-          href: "/services/finance-advisory",
+          href: "/finance-advisory",
           badge: "FIN",
           title: "Финансово консултиране",
           text:
@@ -371,18 +412,21 @@ const content = {
           ],
         },
         {
-          href: "/services/governance-risk-compliance",
-          badge: "GRC",
-          title: "Управление, риск и съответствие",
+          href: "/technology-advisory",
+          badge: "TECH",
+          title: "Технологично консултиране",
           text:
-            "IT риск, управление на сигурността, платежна сигурност, compliance готовност и сигурни delivery практики.",
+            "Оценки по рамки, gap анализ и консултантска подкрепа за регулирани и технологично зависими организации.",
           services: [
-            "IT риск и консултиране по съответствие",
-            "PCI DSS готовност и платежна сигурност",
-            "SOC 1 / SOC 2 готовност",
-            "ISO 27001 консултиране",
-            "Управление на сигурността",
-            "Secure SDLC и облачна сигурност",
+            "NIS2 готовност",
+            "DORA готовност",
+            "PCI DSS консултиране",
+            "SWIFT CSP оценки",
+            "ISO 27001 готовност",
+            "ISO 42001 AI управление",
+            "Cyber Resilience Act (CRA) готовност",
+            "IT риск мениджмънт",
+            "Консултиране по сигурност и съответствие",
           ],
         },
       ],
@@ -391,13 +435,14 @@ const content = {
       eyebrow: "Финансово консултиране",
       title: "Опитна финансова подкрепа за видимост, контрол и растеж.",
       intro:
-        "CFOmics помага на управленските екипи да подобрят планирането, отчетността, видимостта върху паричните потоци и управлението чрез практично финансово консултиране.",
+        "CFOmics помага на организации да подобрят финансовата видимост, отчетната дисциплина и финансовите операционни модели.",
       outcomes: [
-        "По-ясни процеси за бюджетиране, прогнозиране и FP&A",
-        "Управленска отчетност, която подкрепя действия",
-        "Видимост върху ликвидност и парични потоци",
-        "Вътрешни контроли, съобразени с операционния модел",
-        "Работни потоци с AI за финансова продуктивност",
+        "CFO услуги",
+        "Финансова отчетност",
+        "Бюджетиране и прогнозиране",
+        "Вътрешни контроли",
+        "Финансова трансформация",
+        "Консултиране по счетоводни процеси",
       ],
       sections: [
         {
@@ -414,6 +459,40 @@ const content = {
           title: "Контроли, ликвидност и трансформация",
           text:
             "Процеси за парични потоци, работен капитал, вътрешни контроли и подобрения с AI.",
+        },
+      ],
+    },
+    technology: {
+      eyebrow: "Технологично консултиране",
+      title: "Технологично консултиране",
+      intro:
+        "CFOmics предоставя оценки по рамки, gap анализ и консултантска подкрепа за регулирани и технологично зависими организации.",
+      outcomes: [
+        "NIS2 готовност",
+        "DORA готовност",
+        "PCI DSS консултиране",
+        "SWIFT CSP оценки",
+        "ISO 27001 готовност",
+        "ISO 42001 AI управление",
+        "Cyber Resilience Act (CRA) готовност",
+        "IT риск мениджмънт",
+        "Консултиране по сигурност и съответствие",
+      ],
+      sections: [
+        {
+          title: "Регулаторна готовност",
+          text:
+            "Оценка и консултантска подкрепа за NIS2, DORA, Cyber Resilience Act готовност и свързани управленски очаквания.",
+        },
+        {
+          title: "Рамки за сигурност и съответствие",
+          text:
+            "Практичен gap анализ и консултиране за PCI DSS, SWIFT CSP, ISO 27001 и ISO 42001 AI управление.",
+        },
+        {
+          title: "IT риск мениджмънт",
+          text:
+            "Структурирана подкрепа за технологичен риск, управление на сигурността, remediation планиране и compliance приоритети.",
         },
       ],
     },
@@ -481,7 +560,7 @@ const content = {
       eyebrow: "Контакт",
       title: "Запазете консултация",
       intro:
-        "Започнете с фокусиран разговор за финансовите приоритети, отчетността, рисковите области и пътната карта за управление.",
+        "Свържете се с CFOmics за консултантски, партньорски и оценъчни запитвания във финанси, технологии, управление, риск и съответствие.",
       email: "office@cfomics.com",
     },
     insights: {
@@ -502,8 +581,8 @@ const content = {
 } as const;
 
 const serviceNavItems = [
-  { key: "finance", href: "/services/finance-advisory" },
-  { key: "grc", href: "/services/governance-risk-compliance" },
+  { key: "finance", href: "/finance-advisory" },
+  { key: "technology", href: "/technology-advisory" },
   { key: "allServices", href: "/services" },
 ] as const;
 
@@ -518,6 +597,9 @@ export function SitePage({ page }: { page: PageKey }) {
       {page === "home" && <HomePage t={t} />}
       {page === "services" && <ServicesPage t={t} />}
       {page === "finance" && <DetailPage data={t.finance} cta={t.cta} />}
+      {page === "technology" && (
+        <DetailPage data={t.technology} cta={t.cta} />
+      )}
       {page === "grc" && <DetailPage data={t.grc} cta={t.cta} />}
       {page === "about" && <AboutPage t={t} />}
       {page === "contact" && <ContactPage t={t} />}

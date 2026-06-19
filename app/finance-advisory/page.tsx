@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SitePage } from "../../components/SitePage";
+import { SitePage } from "../components/SitePage";
 
 export const metadata: Metadata = {
   title: "Finance Advisory | CFOmics",
