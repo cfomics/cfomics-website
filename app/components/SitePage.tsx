@@ -55,7 +55,7 @@ const content = {
       tagline: "Finance Advisory | CFO Support | Governance",
     },
     home: {
-      eyebrow: "Finance | Governance | Risk | Compliance",
+      eyebrow: "Finance | Risk | Technology | Compliance",
       title: "Finance, Risk & Governance Advisory",
       intro:
         "CFOmics helps businesses strengthen financial management, improve reporting visibility, optimize processes and build scalable governance frameworks.",
@@ -67,7 +67,7 @@ const content = {
         "Reporting & internal controls",
         "Governance & compliance expertise",
       ],
-      visualTitle: "Leadership Advisory Workshop",
+      visualTitle: "Integrated Finance & Technology Advisory",
       visualIntro: "Finance, governance, risk and compliance aligned around practical management decisions.",
       framework: ["Finance", "Governance", "Risk", "Compliance"],
       servicesTitle: "Our Services",
@@ -80,7 +80,7 @@ const content = {
         "NIS2 Readiness",
         "DORA Readiness",
         "PCI DSS Advisory",
-        "SWIFT CSP Assessments",
+        "SWIFT Customer Security Programme (CSP) Assessments",
         "ISO 27001 Readiness",
         "ISO 42001 AI Governance",
         "IT Risk Management",
@@ -99,7 +99,7 @@ const content = {
       ],
       expertiseTitle: "Expertise Behind CFOmics",
       expertiseIntro:
-        "Senior finance, operations, analytics and governance experience for companies that need practical advisory without unnecessary complexity.",
+        "Senior finance, operations, analytics and governance experience for companies that need practical advisory without unnecessary complexity. CFOmics combines core advisory capabilities with a trusted network of experienced finance, compliance and technology professionals.",
       whyTitle: "Why CFOmics",
       whyText:
         "CFOmics combines finance and technology expertise with senior-level advisory experience, a practical compliance approach, strong governance and risk focus, and tailored engagements shaped around each client's priorities.",
@@ -148,7 +148,7 @@ const content = {
             "NIS2 Readiness",
             "DORA Readiness",
             "PCI DSS Advisory",
-            "SWIFT CSP Assessments",
+            "SWIFT Customer Security Programme (CSP) Assessments",
             "ISO 27001 Readiness",
             "ISO 42001 AI Governance",
             "Cyber Resilience Act (CRA) Readiness",
@@ -198,7 +198,7 @@ const content = {
         "NIS2 Readiness",
         "DORA Readiness",
         "PCI DSS Advisory",
-        "SWIFT CSP Assessments",
+        "SWIFT Customer Security Programme (CSP) Assessments",
         "ISO 27001 Readiness",
         "ISO 42001 AI Governance",
         "Cyber Resilience Act (CRA) Readiness",
@@ -260,7 +260,11 @@ const content = {
       paragraphs: [
         "CFOmics is a boutique advisory firm focused on finance transformation, CFO support, governance and practical risk management. We help companies improve financial visibility, strengthen internal controls, optimize operations and make better business decisions through structured reporting and advisory support.",
         "Our approach combines hands-on finance experience with process improvement, analytics, AI-enabled workflows and selected compliance and security expertise. We work with growing companies, local businesses and international organizations that need senior-level support without building a large internal advisory team.",
+        "CFOmics combines core advisory capabilities with a trusted network of experienced finance, compliance and technology professionals.",
       ],
+      modelTitle: "Our Model",
+      modelText:
+        "CFOmics combines senior advisory experience with a flexible network of finance, risk, compliance and technology professionals. This allows us to assemble the right expertise for each engagement while maintaining practical oversight, quality and business focus.",
       focus: ["Finance", "Risk", "Compliance", "Security"],
       profiles: [
         {
@@ -328,7 +332,7 @@ const content = {
       tagline: "Финансово консултиране | CFO подкрепа | Управление и контрол",
     },
     home: {
-      eyebrow: "Финанси | Управление | Риск | Съответствие",
+      eyebrow: "Финанси | Риск | Технологии | Съответствие",
       title: "Финансово, рисково и управленско консултиране",
       intro:
         "CFOmics помага на бизнеси да подобрят финансовото управление, видимостта на отчетността, процесите и мащабируемите рамки за управление и контрол.",
@@ -340,7 +344,7 @@ const content = {
         "Отчетност и вътрешни контроли",
         "Експертиза по управление и съответствие",
       ],
-      visualTitle: "Работна среща с ръководството",
+      visualTitle: "Интегрирано финансово и технологично консултиране",
       visualIntro: "Финанси, управление, риск и съответствие, свързани с практични управленски решения.",
       framework: ["Финанси", "Управление", "Риск", "Съответствие"],
       servicesTitle: "Нашите услуги",
@@ -353,7 +357,7 @@ const content = {
         "NIS2 готовност",
         "DORA готовност",
         "PCI DSS консултиране",
-        "SWIFT CSP оценки",
+        "SWIFT Customer Security Programme (CSP) оценки",
         "ISO 27001 готовност",
         "ISO 42001 AI управление",
         "IT риск мениджмънт",
@@ -372,7 +376,7 @@ const content = {
       ],
       expertiseTitle: "Експертизата зад CFOmics",
       expertiseIntro:
-        "Опит във финанси, операции, анализи и управление за компании, които имат нужда от практично консултиране без излишна сложност.",
+        "Опит във финанси, операции, анализи и управление за компании, които имат нужда от практично консултиране без излишна сложност. CFOmics комбинира основни консултантски способности с доверена мрежа от опитни финансови, compliance и технологични професионалисти.",
       whyTitle: "Защо CFOmics",
       whyText:
         "CFOmics комбинира финансова и технологична експертиза със senior консултантски опит, практичен compliance подход, силен фокус върху управление и риск, и ангажименти, съобразени с приоритетите на всеки клиент.",
@@ -421,7 +425,7 @@ const content = {
             "NIS2 готовност",
             "DORA готовност",
             "PCI DSS консултиране",
-            "SWIFT CSP оценки",
+            "SWIFT Customer Security Programme (CSP) оценки",
             "ISO 27001 готовност",
             "ISO 42001 AI управление",
             "Cyber Resilience Act (CRA) готовност",
@@ -471,7 +475,7 @@ const content = {
         "NIS2 готовност",
         "DORA готовност",
         "PCI DSS консултиране",
-        "SWIFT CSP оценки",
+        "SWIFT Customer Security Programme (CSP) оценки",
         "ISO 27001 готовност",
         "ISO 42001 AI управление",
         "Cyber Resilience Act (CRA) готовност",
@@ -533,7 +537,11 @@ const content = {
       paragraphs: [
         "CFOmics е бутикова консултантска фирма с фокус върху финансова трансформация, CFO подкрепа, управление и практичен риск мениджмънт. Помагаме на компании да подобрят финансовата видимост, да засилят вътрешните контроли, да оптимизират операциите и да вземат по-добри бизнес решения чрез структурирана отчетност и консултантска подкрепа.",
         "Подходът ни комбинира практически финансов опит с подобрение на процеси, анализи, работни потоци с AI и избрана експертиза по съответствие и сигурност. Работим с растящи компании, местни бизнеси и международни организации, които имат нужда от опитна подкрепа без изграждане на голям вътрешен консултантски екип.",
+        "CFOmics комбинира основни консултантски способности с доверена мрежа от опитни финансови, compliance и технологични професионалисти.",
       ],
+      modelTitle: "Нашият модел",
+      modelText:
+        "CFOmics комбинира senior консултантски опит с гъвкава мрежа от финансови, рискови, compliance и технологични професионалисти. Това ни позволява да съберем правилната експертиза за всеки ангажимент, като запазваме практичен надзор, качество и бизнес фокус.",
       focus: ["Финанси", "Риск", "Съответствие", "Сигурност"],
       profiles: [
         {
@@ -1067,9 +1075,11 @@ function AboutPage({ t }: { t: SiteContent }) {
                 </span>
               ))}
             </div>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              {t.about.paragraphs[1]}
-            </p>
+            <div className="mt-6 space-y-5 text-lg leading-8 text-slate-600">
+              {t.about.paragraphs.slice(1).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {t.about.profiles.map((profile) => (
@@ -1089,6 +1099,17 @@ function AboutPage({ t }: { t: SiteContent }) {
           </div>
         </div>
       </SectionShell>
+      <section className="px-5 pb-20 sm:px-8">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-blue-950/5">
+          <Eyebrow>{t.about.modelTitle}</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            {t.about.modelTitle}
+          </h2>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600">
+            {t.about.modelText}
+          </p>
+        </div>
+      </section>
       <CTA t={t} />
     </>
   );
