@@ -35,6 +35,19 @@ jobs:
             --spec-version 1.6 \
             -o cfomics.cdx.json
 
+      - name: Add SBOM creator metadata
+        run: |
+          jq '
+            .metadata.authors = [
+              {
+                "name": "CFOmics Product Security",
+                "email": "security@cfomics.com"
+              }
+            ]
+          ' cfomics.cdx.json > cfomics.tmp.json
+
+          mv cfomics.tmp.json cfomics.cdx.json
+
       - name: Install sbomqs
         run: |
           SBOMQS_VERSION="v1.2.0"
