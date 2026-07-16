@@ -1,0 +1,63 @@
+﻿name: Software Composition Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  grype:
+    name: Scan SBOM with Grype
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate CycloneDX SBOM
+        run: |
+          npx --yes @cyclonedx/cdxgen@12.7.1 \
+            -t npm \
+            --spec-version 1.6 \
+            -o cfomics.cdx.json
+
+      - name: Scan SBOM with Grype
+        id: grype
+        uses: anchore/scan-action@v7
+        with:
+          sbom: cfomics.cdx.json
+          fail-build: false
+          severity-cutoff: high
+          output-format: sarif
+
+      - name: Upload results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: ${{ steps.grype.outputs.sarif }}
+
+      - name: Upload SCA evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grype-scan-${{ github.sha }}
+          path: |
+            cfomics.cdx.json
+            ${{ steps.grype.outputs.sarif }}
+          if-no-files-found: warn
+          retention-days: 30
