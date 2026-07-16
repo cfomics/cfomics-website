@@ -35,41 +35,102 @@ jobs:
             --spec-version 1.6 \
             -o cfomics.cdx.json
 
-      - name: Add SBOM creator metadata
-        run: |
-          jq '
-            .metadata.authors = [
-              {
-                "name": "CFOmics Product Security",
-                "email": "security@cfomics.com"
-              }
-            ]
-          ' cfomics.cdx.json > cfomics.tmp.json
-
-          mv cfomics.tmp.json cfomics.cdx.json
-
-      - name: Add BSI component metadata
+      - name: Add SBOM metadata
         shell: pwsh
         run: |
-          Copy-Item cfomics.cdx.json `
-            security/sbom/generated/cfomics-0.1.0.cdx.json
+          $path = "cfomics.cdx.json"
 
-          ./security/sbom/scripts/enrich-sbom.ps1 `
-            -ProductVersion 0.1.0
+          $sbom = Get-Content $path -Raw | ConvertFrom-Json
 
-          Copy-Item `
-            security/sbom/generated/cfomics-0.1.0.bsi-enriched.cdx.json `
-            cfomics.cdx.json
+          if (-not $sbom.metadata) {
+            $sbom | Add-Member `
+              -NotePropertyName metadata `
+              -NotePropertyValue ([PSCustomObject]@{}) `
+              -Force
+          }
+
+          $sbom.metadata | Add-Member `
+            -NotePropertyName authors `
+            -NotePropertyValue @(
+              [PSCustomObject]@{
+                name  = "CFOmics Product Security"
+                email = "security@cfomics.com"
+              }
+            ) `
+            -Force
+
+          if (-not $sbom.metadata.component) {
+            $sbom.metadata | Add-Member `
+              -NotePropertyName component `
+              -NotePropertyValue ([PSCustomObject]@{}) `
+              -Force
+          }
+
+          $component = $sbom.metadata.component
+
+          $component | Add-Member `
+            -NotePropertyName type `
+            -NotePropertyValue "application" `
+            -Force
+
+          $component | Add-Member `
+            -NotePropertyName name `
+            -NotePropertyValue "CFOmics Website" `
+            -Force
+
+          $component | Add-Member `
+            -NotePropertyName version `
+            -NotePropertyValue "0.1.0" `
+            -Force
+
+          $component | Add-Member `
+            -NotePropertyName supplier `
+            -NotePropertyValue ([PSCustomObject]@{
+              name = "CFOmics"
+            }) `
+            -Force
+
+          $component | Add-Member `
+            -NotePropertyName properties `
+            -NotePropertyValue @(
+              [PSCustomObject]@{
+                name  = "cdx:bsi:component:function"
+                value = "Business advisory website"
+              },
+              [PSCustomObject]@{
+                name  = "cdx:bsi:component:source"
+                value = "CFOmics"
+              }
+            ) `
+            -Force
+
+          $sbom |
+            ConvertTo-Json -Depth 100 |
+            Set-Content $path -Encoding utf8
+
+      - name: Verify SBOM metadata
+        shell: pwsh
+        run: |
+          $sbom = Get-Content "cfomics.cdx.json" -Raw |
+            ConvertFrom-Json
+
+          Write-Host "SBOM creator:"
+          $sbom.metadata.authors | Format-List *
+
+          Write-Host "Main component:"
+          $sbom.metadata.component | Format-List *
 
       - name: Install sbomqs
         run: |
           SBOMQS_VERSION="v1.2.0"
+
           curl --fail --location \
             --output sbomqs \
             "https://github.com/interlynk-io/sbomqs/releases/download/${SBOMQS_VERSION}/sbomqs-linux-amd64"
 
           chmod +x sbomqs
           sudo mv sbomqs /usr/local/bin/sbomqs
+
           sbomqs version
 
       - name: Score SBOM quality
