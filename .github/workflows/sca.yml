@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 
 jobs:
   grype:
@@ -44,12 +43,6 @@ jobs:
           fail-build: false
           severity-cutoff: high
           output-format: sarif
-
-      - name: Upload results to GitHub Security
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
-        with:
-          sarif_file: ${{ steps.grype.outputs.sarif }}
 
       - name: Upload SCA evidence
         uses: actions/upload-artifact@v4
