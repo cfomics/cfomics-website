@@ -32,6 +32,8 @@ jobs:
         run: |
           npx --yes @cyclonedx/cdxgen@12.7.1 \
             -t npm \
+            --required-only \
+            --no-babel \
             --spec-version 1.6 \
             -o cfomics.cdx.json
 
@@ -134,3 +136,4 @@ jobs:
             bsi-compliance.json
           if-no-files-found: error
           retention-days: 30
+
