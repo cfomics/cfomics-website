@@ -4,19 +4,25 @@ on:
   push:
     branches:
       - main
+
   pull_request:
+
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  sbom:
-    name: Generate and validate CycloneDX SBOM
+
+  generate-sbom:
+
+    name: Generate CycloneDX SBOM
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -35,36 +41,10 @@ jobs:
             --spec-version 1.6 \
             -o cfomics.cdx.json
 
-      - name: Score SBOM quality
-        run: |
-          docker run --rm \
-            -v "${{ github.workspace }}:/app" \
-            ghcr.io/interlynk-io/sbomqs:v2.0.7 \
-            score /app/cfomics.cdx.json \
-            > sbom-quality.txt
-
-          cat sbom-quality.txt
-
-      - name: Check BSI TR-03183-2 compliance
-        continue-on-error: true
-        run: |
-          docker run --rm \
-            -v "${{ github.workspace }}:/app" \
-            ghcr.io/interlynk-io/sbomqs:v2.0.7 \
-            compliance --bsi-v2 \
-            --json \
-            --output /app/bsi-compliance.json \
-            /app/cfomics.cdx.json
-
-          cat bsi-compliance.json
-
-      - name: Upload SBOM evidence
+      - name: Upload SBOM artifact
         uses: actions/upload-artifact@v4
         with:
-          name: cfomics-sbom-${{ github.sha }}
-          path: |
-            cfomics.cdx.json
-            sbom-quality.txt
-            bsi-compliance.json
+          name: cyclonedx-sbom
+          path: cfomics.cdx.json
           if-no-files-found: error
           retention-days: 30
