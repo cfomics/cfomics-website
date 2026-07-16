@@ -48,6 +48,19 @@ jobs:
 
           mv cfomics.tmp.json cfomics.cdx.json
 
+      - name: Add BSI component metadata
+        shell: pwsh
+        run: |
+          Copy-Item cfomics.cdx.json `
+            security/sbom/generated/cfomics-0.1.0.cdx.json
+
+          ./security/sbom/scripts/enrich-sbom.ps1 `
+            -ProductVersion 0.1.0
+
+          Copy-Item `
+            security/sbom/generated/cfomics-0.1.0.bsi-enriched.cdx.json `
+            cfomics.cdx.json
+
       - name: Install sbomqs
         run: |
           SBOMQS_VERSION="v1.2.0"
