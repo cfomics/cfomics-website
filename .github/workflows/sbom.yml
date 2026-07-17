@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+  attestations: write
 
 jobs:
   sbom:
@@ -125,6 +127,11 @@ jobs:
               }
           ' bsi-compliance.json
 
+      - name: Attest SBOM provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: cfomics.cdx.json
+
       - name: Upload SBOM evidence
         uses: actions/upload-artifact@v4
         if: always()
@@ -136,4 +143,3 @@ jobs:
             bsi-compliance.json
           if-no-files-found: error
           retention-days: 30
-
