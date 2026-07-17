@@ -1,0 +1,26 @@
+name: OpenVEX
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  openvex:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install vexctl
+        run: |
+          VERSION=0.3.1
+          curl -sSL https://github.com/openvex/vexctl/releases/download/v${VERSION}/vexctl_Linux_x86_64.tar.gz \
+            | tar -xz
+          sudo mv vexctl /usr/local/bin/
+
+      - name: Verify installation
+        run: |
+          vexctl version
