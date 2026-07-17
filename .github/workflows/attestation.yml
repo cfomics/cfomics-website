@@ -1,0 +1,33 @@
+name: Artifact Attestation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate SBOM
+        uses: CycloneDX/gh-node-module-generatebom@v2
+        with:
+          path: .
+          output: cfomics.cdx.json
+
+      - name: Attest SBOM
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: cfomics.cdx.json
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: cfomics.cdx.json
