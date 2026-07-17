@@ -9,6 +9,7 @@ permissions:
 jobs:
   openvex:
     name: OpenVEX
+
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +27,14 @@ jobs:
 
       - name: Verify installation
         run: vexctl version
+
+      - name: Validate OpenVEX document
+        run: |
+          vexctl validate security/vex/openvex.json
+
+      - name: Upload OpenVEX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: openvex-${{ github.sha }}
+          path: security/vex/openvex.json
+          retention-days: 30
