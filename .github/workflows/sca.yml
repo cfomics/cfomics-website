@@ -35,7 +35,7 @@ jobs:
             --spec-version 1.6 \
             -o cfomics.cdx.json
 
-      - name: Scan SBOM with Grype
+      - name: Scan SBOM with Grype (SARIF)
         id: grype
         uses: anchore/scan-action@v7
         with:
@@ -44,6 +44,15 @@ jobs:
           severity-cutoff: high
           output-format: sarif
 
+      - name: Install Grype CLI
+        uses: anchore/scan-action/download-grype@v7
+
+      - name: Generate Grype JSON Report
+        run: |
+          grype sbom:cfomics.cdx.json \
+            -o json \
+            > grype-report.json
+
       - name: Upload SCA evidence
         uses: actions/upload-artifact@v4
         if: always()
@@ -51,6 +60,7 @@ jobs:
           name: grype-scan-${{ github.sha }}
           path: |
             cfomics.cdx.json
+            grype-report.json
             ${{ steps.grype.outputs.sarif }}
           if-no-files-found: warn
           retention-days: 30
