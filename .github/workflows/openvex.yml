@@ -9,7 +9,6 @@ permissions:
 jobs:
   openvex:
     name: OpenVEX
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,9 +16,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install vexctl
-        uses: openvex/setup-vexctl@main
-        with:
-          vexctl-release: "0.4.4"
+        run: |
+          curl --fail --location --silent --show-error \
+            --output vexctl \
+            https://github.com/openvex/vexctl/releases/download/v0.4.4/vexctl-linux-amd64
+
+          chmod +x vexctl
+          sudo mv vexctl /usr/local/bin/vexctl
 
       - name: Verify installation
         run: vexctl version
