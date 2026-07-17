@@ -36,7 +36,7 @@ jobs:
             -o cfomics.cdx.json
 
       - name: Scan SBOM with Grype (SARIF)
-        id: grype
+        id: grype-sarif
         uses: anchore/scan-action@v7
         with:
           sbom: cfomics.cdx.json
@@ -44,15 +44,31 @@ jobs:
           severity-cutoff: high
           output-format: sarif
 
-      - name: Install Grype CLI
-        id: grype-cli
-        uses: anchore/scan-action/download-grype@v7
+      - name: Scan SBOM with Grype (JSON)
+        id: grype-json
+        uses: anchore/scan-action@v7
+        with:
+          sbom: cfomics.cdx.json
+          fail-build: false
+          severity-cutoff: high
+          output-format: json
+          output-file: grype-report.json
 
-      - name: Generate Grype JSON Report
+      - name: Install vexctl
         run: |
-          ${{ steps.grype-cli.outputs.cmd }} sbom:cfomics.cdx.json \
-            -o json \
-            > grype-report.json
+          curl --fail --location --silent --show-error \
+            --output vexctl \
+            https://github.com/openvex/vexctl/releases/download/v0.4.4/vexctl-linux-amd64
+
+          chmod +x vexctl
+          sudo mv vexctl /usr/local/bin/vexctl
+
+      - name: Verify vexctl installation
+        run: vexctl version
+
+      - name: Validate OpenVEX document
+        run: |
+          vexctl validate security/vex/openvex.json
 
       - name: Upload SCA evidence
         uses: actions/upload-artifact@v4
@@ -62,6 +78,7 @@ jobs:
           path: |
             cfomics.cdx.json
             grype-report.json
-            ${{ steps.grype.outputs.sarif }}
+            security/vex/openvex.json
+            ${{ steps.grype-sarif.outputs.sarif }}
           if-no-files-found: warn
           retention-days: 30
