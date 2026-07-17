@@ -1,0 +1,22 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://cfomics.com/vex/openvex.json",
+  "author": "CFOmics",
+  "timestamp": "2026-07-17T00:00:00Z",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41305"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/cfomics-website"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "The application does not process or stringify untrusted user-supplied CSS. PostCSS is used only during the build process for static assets, therefore the vulnerable execution path is not reachable."
+    }
+  ]
+}
