@@ -45,11 +45,12 @@ jobs:
           output-format: sarif
 
       - name: Install Grype CLI
+        id: grype-cli
         uses: anchore/scan-action/download-grype@v7
 
       - name: Generate Grype JSON Report
         run: |
-          grype sbom:cfomics.cdx.json \
+          ${{ steps.grype-cli.outputs.cmd }} sbom:cfomics.cdx.json \
             -o json \
             > grype-report.json
 
